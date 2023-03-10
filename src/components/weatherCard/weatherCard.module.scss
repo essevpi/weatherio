@@ -1,0 +1,9 @@
+@import '../../styles/variables.scss';
+
+.weather-card__container {
+  width: 75%;
+  height: 85%;
+  background: $secondary-background-color;
+  padding: 1rem;
+  border-radius: 8px;
+}

@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  
+  height: $footer-height;
+  background: $secondary-background-color;
+}
