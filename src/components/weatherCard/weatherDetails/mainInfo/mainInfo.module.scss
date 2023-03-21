@@ -1,0 +1,32 @@
+@import '../../../../styles/variables.scss';
+
+.weather__icons {
+  color: $text-primary-color;
+  font-size: 5rem;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+
+  /* .title__container {
+    display: flex;
+    align-items: center;
+  } */
+
+  .sub-info__container {
+    display: flex;
+    align-items: center;
+
+    .temp__container {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        color: $text-secondary-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+

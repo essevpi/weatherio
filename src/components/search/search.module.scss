@@ -1,1 +1,41 @@
 @import '../../styles/variables.scss';
+
+.search__container {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background: $tertiary-background-color;
+  width: 100%;
+
+  .search__wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid transparent;
+    border-radius: 8px;    
+    background: $input-background-dark-hover;    
+
+    .search__field {
+      flex: 1;
+      background: transparent;     
+      transition: 0.3s ease;
+      border: none;
+      padding: 0.5rem;
+      border: 1px solid transparent;
+      border-radius: 0 8px 8px 0;
+      outline: none;
+  
+      &:focus {
+        background: $background-color;
+        border-radius: 0 8px 8px 0;
+        outline: none;
+      }
+    }
+  
+    .search__icon {
+      padding: 0.5rem;
+      background: transparent;
+    }
+  }
+
+  
+}

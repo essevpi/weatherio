@@ -19,19 +19,26 @@ body {
   min-height: 100vh;
 }
 
-header {
-  height: $header-height;
-  background: $secondary-background-color;
-}
-
-footer {
-  height: $footer-height;
-  background: $secondary-background-color;
-}
-
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button, button:focus {
+  border: none;
+  outline: none;
+}
+
+.card__container {
+  padding: 0.5rem;
+  border-radius: 8px;  
+  background-color: $secondary-background-color;
+}
+
+.card__title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
 }
 
 @media (prefers-color-scheme: dark) {

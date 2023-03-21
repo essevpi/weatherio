@@ -1,16 +1,24 @@
+/* Layout values */
 $header-height: 5rem;
 $footer-height: 4rem;
+$info-gap: 0.5rem;
+$info-items-per-row: 2;
+$card-icon-size: 2rem;
 
 /* Theme colors */
 $background-color: #121212;
 $secondary-background-color: #202124;
+$tertiary-background-color: #2d2f33;
 $color-3: #606368;
 $color-4: #b7bbc0;
-$accent-primary: #fff;
+$accent-primary: #e7ff90;
+
+$input-background-dark: #ffffff29;
+$input-background-dark-hover: #1a1a1a;
 
 $text-primary-color: #fff;
-$font-secondary-color: #ffffffb3;
-$font-disabled-color: #ffffff80;
+$text-secondary-color: #ffffffbb;
+$text-disabled-color: #ffffff80;
 
 $divider-color: #ffffff1f;
 

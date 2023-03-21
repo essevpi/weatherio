@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useDispatch, useSelector } from 'react-redux';
-import Search from '@/components/search/search';
-import WeatherCard from '@/components/weatherCard/weatherCard';
-import styles from '@/styles/Home.module.scss';
+import Search from '@/components/search';
+import WeatherCard from '@/components/weatherCard';
+import styles from '../styles/Home.module.scss';
 
 
 const Home = () => {

@@ -1,6 +1,6 @@
 import styles from './weatherCard.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import WeatherDetails from './weatherDetails/weatherDetails';
+import WeatherDetails from './weatherDetails';
 import EmptyCard from './emptyCard/emptyCard';
 
 const getIconUrl = (iconCode) => {
@@ -12,7 +12,6 @@ const getFlagIconUrl = (countryCode) => {
 };
 
 const WeatherCard = () => {
-
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector(state => state.weather);
   const { input } = useSelector(state => state.search);
@@ -23,7 +22,7 @@ const WeatherCard = () => {
         data && data.cod == 200 
         ? loading
           ? <div>Loading results...</div>
-          : <WeatherDetails weather={data} />
+          : <WeatherDetails />
         : <EmptyCard />
       }
     </div>

@@ -1,0 +1,45 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { changeInput } from '@/slices/searchSlice';
+import { fetchWeatherByCity } from '@/slices/weatherSlice';
+import { AiOutlineSearch } from 'react-icons/ai';
+
+import styles from './search.module.scss';
+
+const Search = () => {
+  const dispatch = useDispatch();
+  const { input } = useSelector((state) => state.search);
+  const { data } = useSelector((state) => state.weather);
+
+  const handleSearchChange = (e) => {
+    dispatch(changeInput(e.target.value));
+  };
+
+  const handleFormSubmit = (city) => (e) => {
+    e.preventDefault();
+    dispatch(fetchWeatherByCity(city));
+    dispatch(changeInput(''));
+  };
+
+  return (
+    <form className={styles['search__container']} onSubmit={handleFormSubmit(input)}>
+      <div className={styles['search__wrapper']}>
+        <input
+          className={styles['search__field']}
+          type='search'
+          placeholder='Search city'
+          value={input}
+          onChange={handleSearchChange}
+        />
+        <span
+          className={styles['search__icon']}
+          /* type='submit' */
+        >
+          <AiOutlineSearch style={{display: 'flex'}} size={'24px'}/>
+        </span>
+      </div>
+      {/* {data && data.cod == 404 && <div>City not found!</div>} */}
+    </form>
+  );
+};
+
+export default Search;

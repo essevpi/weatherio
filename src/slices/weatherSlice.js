@@ -9,6 +9,9 @@ export const fetchWeatherByCity = createAsyncThunk(
         `${BASE_URL_WEATHER}/weather?q=${payload}&units=metric&appid=${API_KEY}`
       )
       .then(res => res.json())
+
+      if (response.cod === '404')
+        return response;      
       
       let filteredResult = {
         coord: response.coord,
@@ -20,8 +23,13 @@ export const fetchWeatherByCity = createAsyncThunk(
           clouds: response.clouds,
         },        
         sys: response.sys,
+        name: response.name,
+        timezone: response.timezone,
         cod: response.cod
       }
+
+      console.log('filtered',filteredResult)
+      console.log('res', response)
 
       return filteredResult;
     } catch (error) {
