@@ -12,14 +12,22 @@ $tertiary-background-color: #2d2f33;
 $color-3: #606368;
 $color-4: #b7bbc0;
 $accent-primary: #e7ff90;
-
 $input-background-dark: #ffffff29;
 $input-background-dark-hover: #1a1a1a;
-
 $text-primary-color: #fff;
 $text-secondary-color: #ffffffbb;
 $text-disabled-color: #ffffff80;
-
 $divider-color: #ffffff1f;
+
+/* Responsive breakpoints */
+$xs-width-breakpoint: 480px;
+$s-width-breakpoint: 768px;
+$m-width-breakpoint: 1024px;
+$l-width-breakpoint: 1200px;
+
+$l-width-content: 50%;
+$m-width-content: 70%;
+$s-width-content: 85%;
+$xs-width-content: 95%;
 
 /* Clamp font size */

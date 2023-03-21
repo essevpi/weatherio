@@ -29,6 +29,22 @@ button, button:focus {
   outline: none;
 }
 
+.main__content-container {
+  width: $l-width-content;
+
+  @media screen and (max-width: $l-width-breakpoint) {
+    width: $m-width-content;
+  }
+
+  @media screen and (max-width: $m-width-breakpoint) {
+    width: $s-width-content;
+  }
+
+  @media screen and (max-width: $s-width-breakpoint) {
+    width: $xs-width-content;
+  }
+}
+
 .card__container {
   padding: 0.5rem;
   border-radius: 8px;  

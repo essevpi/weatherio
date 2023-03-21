@@ -4,9 +4,10 @@ import SunInfo from './sunInfo';
 import Wind from './wind';
 import Pressure from './pressure';
 import Temperature from './temperature';
+import Rain from './rain';
+import Humidity from './humidity';
 
 import styles from './weatherDetails.module.scss';
-
 
 const WeatherDetails = () => {
   const { data } = useSelector((state) => state.weather);
@@ -21,6 +22,8 @@ const WeatherDetails = () => {
         <SunInfo />
         <Pressure />
         <Temperature />
+        <Rain />
+        <Humidity />
       </div>
       {/* <p>{JSON.stringify(data)}</p> */}
     </div>

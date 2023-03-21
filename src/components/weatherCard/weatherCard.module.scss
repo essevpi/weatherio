@@ -3,8 +3,6 @@
 .weather-card__container {
   display: flex;
   justify-content: center;
-  height: 100%;
-  width: 100%;
-  margin: 1rem 0;
-  background: $background-color;
+  //align-items: center;
+  flex: 1;
 }
