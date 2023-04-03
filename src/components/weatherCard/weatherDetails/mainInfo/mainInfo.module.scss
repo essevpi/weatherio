@@ -16,11 +16,14 @@
 
   .sub-info__container {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
+    justify-content: space-between;
 
     .temp__container {
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
 
       p {
         color: $text-secondary-color;

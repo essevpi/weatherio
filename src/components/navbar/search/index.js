@@ -8,7 +8,6 @@ import styles from './search.module.scss';
 const Search = () => {
   const dispatch = useDispatch();
   const { input } = useSelector((state) => state.search);
-  const { data } = useSelector((state) => state.weather);
 
   const handleSearchChange = (e) => {
     dispatch(changeInput(e.target.value));

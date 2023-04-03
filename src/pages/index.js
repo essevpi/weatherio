@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useDispatch, useSelector } from 'react-redux';
-import Search from '@/components/search';
+import Search from '@/components/navbar/search';
 import WeatherCard from '@/components/weatherCard';
 import styles from '../styles/Home.module.scss';
 
@@ -13,10 +13,8 @@ const Home = () => {
         <meta name="description" content="Weather app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
+      </Head>      
       <div className={styles['home__container']}>
-        <Search />
         <WeatherCard />
       </div>
     </>

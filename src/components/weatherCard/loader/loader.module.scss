@@ -1,0 +1,48 @@
+@import '../../../styles/variables.scss';
+
+.loader__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  .progress-bar__container {
+    margin-top: 1rem;
+    background-color: $secondary-background-color;
+    border-radius: 9999px;
+    height: 0.75rem;
+    width: 35%;
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (max-width: $m-width-breakpoint) {
+      width: 50%;
+    }
+  
+    .progress-bar__progress {
+      background-color: $accent-primary;
+      border-radius: 9999px;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      width: 50%;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-name: indeterminate-progress-bar;
+    }
+  
+    @keyframes indeterminate-progress-bar {
+        from {
+            left: -50%;
+        }
+        to {
+            left: 100%;
+        }
+    }
+  }
+}
+

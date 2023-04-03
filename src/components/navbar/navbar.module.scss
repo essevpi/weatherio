@@ -2,11 +2,39 @@
 
 .navbar__container {  
   display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  height: $header-height;
+  justify-content: center;
+  width: 100%;
+  
+  min-height: $header-height;
   background: $secondary-background-color;
 
   font-size: 2rem;
   font-weight: 600;
+
+  
+  .navbar__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: $xs-width-breakpoint) {
+      flex-direction: column;
+    }
+  
+
+     .navbar__logo-container {
+      display: flex;
+      align-items: center;
+
+      .navbar-logo {
+        display: flex;
+      }
+    }
+
+    /*
+    .navbar__search-container {
+      flex: 2;
+    } */
+  }
+
+  
 }

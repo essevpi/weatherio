@@ -11,8 +11,12 @@
 
 html,
 body {
-  max-width: 100vw;
+  //max-width: 100vw;
   overflow-x: hidden;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: $text-primary-color;
+  line-height: $line-height;
 }
 
 body {
@@ -29,8 +33,75 @@ button, button:focus {
   outline: none;
 }
 
-.main__content-container {
-  width: $l-width-content;
+h1 {
+  font-size: clamp($h1-min-size, $h1-val-size, $h1-max-size);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp($h2-min-size, $h2-val-size, $h2-max-size);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp($h3-min-size, $h3-val-size, $h3-max-size);
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: clamp($h4-min-size, $h4-val-size, $h4-max-size);
+  line-height: 1.2;
+  color: $text-secondary-color;
+}
+
+p,
+label,
+a,
+button {
+  font-size: clamp($p-min-size, $p-val-size, $p-max-size);
+}
+
+/* .display__value {
+  font-size: clamp($display-m-value-min-size, $display-m-value-val-size, $display-m-value-max-size);
+} */
+
+.display__value {
+  font-size: $display-font-size-l;
+
+  @media screen and (max-width: $l-width-breakpoint) {
+    font-size: $display-font-size-m;
+  }
+
+  @media screen and (max-width: $m-width-breakpoint) {
+    font-size: $display-font-size-s;
+  }
+
+  @media screen and (max-width: $s-width-breakpoint) {
+    font-size: $display-font-size-xs;
+  }
+}
+
+.display__value-large {
+  font-size: $large-display-font-size-l;
+
+  @media screen and (max-width: $l-width-breakpoint) {
+    font-size: $large-display-font-size-m;
+  }
+
+  @media screen and (max-width: $m-width-breakpoint) {
+    font-size: $large-display-font-size-s;
+  }
+
+  @media screen and (max-width: $s-width-breakpoint) {
+    font-size: $large-display-font-size-xs;
+  }
+}
+.main-content__container {
+  width: $xl-width-content;
+
+  @media screen and (max-width: $xl-width-breakpoint) {
+    width: $l-width-content;
+  }
 
   @media screen and (max-width: $l-width-breakpoint) {
     width: $m-width-content;
@@ -40,22 +111,30 @@ button, button:focus {
     width: $s-width-content;
   }
 
-  @media screen and (max-width: $s-width-breakpoint) {
+  @media screen and (max-width: $xs-width-breakpoint) {
     width: $xs-width-content;
   }
 }
 
 .card__container {
-  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
   border-radius: 8px;  
   background-color: $secondary-background-color;
+
+  .card__title {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  .card__sub-heading {
+    color: $text-secondary-color;
+  }
 }
 
-.card__title {
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-}
+
 
 @media (prefers-color-scheme: dark) {
   html {

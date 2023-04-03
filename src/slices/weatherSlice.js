@@ -39,7 +39,7 @@ export const fetchWeatherByCity = createAsyncThunk(
 );
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: 'No error',
   data: null
 }

@@ -1,9 +1,13 @@
 /* Layout values */
 $header-height: 5rem;
 $footer-height: 4rem;
+$search-height: 4rem;
 $info-gap: 0.5rem;
-$info-items-per-row: 2;
+$l-card-items-per-row: 3;
+$m-card-items-per-row: 2;
+$s-card-items-per-row: 1;
 $card-icon-size: 2rem;
+$line-height: 1.6;
 
 /* Theme colors */
 $background-color: #121212;
@@ -20,14 +24,51 @@ $text-disabled-color: #ffffff80;
 $divider-color: #ffffff1f;
 
 /* Responsive breakpoints */
+$xxs-width-breakpoint: 320px;
 $xs-width-breakpoint: 480px;
 $s-width-breakpoint: 768px;
 $m-width-breakpoint: 1024px;
 $l-width-breakpoint: 1200px;
+$xl-width-breakpoint: 1600px;
 
-$l-width-content: 50%;
-$m-width-content: 70%;
+$xl-width-content: 50%;
+$l-width-content: 65%;
+$m-width-content: 75%;
 $s-width-content: 85%;
 $xs-width-content: 95%;
 
-/* Clamp font size */
+/* Fixed font sizes */
+$display-font-size-xs: 1.1rem;
+$display-font-size-s: 1.25rem;
+$display-font-size-m: 1.5rem;
+$display-font-size-l: 1.75rem;
+
+$large-display-font-size-xs: 2.75rem;
+$large-display-font-size-s: 3rem;
+$large-display-font-size-m: 3.5rem;
+$large-display-font-size-l: 4rem;
+
+/* Fluid font sizes */
+$h1-min-size: 1.8rem;
+$h1-max-size: 2.2rem;
+$h1-val-size: 5vw;
+
+$h2-min-size: 1.4rem;
+$h2-max-size: 1.6rem;
+$h2-val-size: 3.5vw;
+
+$h3-min-size: 1.2rem;
+$h3-max-size: 1.4rem;
+$h3-val-size: 3vw;
+
+$h4-min-size: 1rem;
+$h4-max-size: 1.1rem;
+$h4-val-size: 2.5vw;
+
+$p-min-size: 1rem;
+$p-max-size: 1.2rem;
+$p-val-size: 2.5vw;
+
+$display-m-value-min-size: 1rem;
+$display-m-value-max-size: 1.5rem;
+$display-m-value-val-size: calc(1.25vw + 1rem);

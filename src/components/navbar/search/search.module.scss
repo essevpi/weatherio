@@ -1,18 +1,20 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
 .search__container {
   display: flex;
   justify-content: center;
   padding: 0.5rem 1rem;
-  background: $tertiary-background-color;
-  width: 100%;
+  //background: $tertiary-background-color;
+  //width: 100%;
+  //height: $search-height;
 
   .search__wrapper {
     display: flex;
     flex-direction: row-reverse;
     border: 1px solid transparent;
     border-radius: 8px;    
-    background: $input-background-dark-hover;    
+    background: $input-background-dark-hover;
+    width: 100%;    
 
     .search__field {
       flex: 1;

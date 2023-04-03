@@ -14,14 +14,98 @@
 
   .sub-info__container {
     display: flex;
-    flex: 1;
     flex-wrap: wrap;
     gap: $info-gap;    
 
     & > div {
       //width: calc(100% / var(--number-of-items) - (var(--gap) * var(--number-of-gaps) / var(--number-of-items)));
-      width: calc(100% / $info-items-per-row - ($info-gap * 1 / $info-items-per-row)); //works: to check
+      width: calc(100% / $l-card-items-per-row - ($info-gap * 2 / $l-card-items-per-row)); //works: to check
       aspect-ratio: 1/1; //to confirm
+
+      @media screen and (max-width: $s-width-breakpoint) {
+        width: calc(100% / $m-card-items-per-row - ($info-gap * 1 / $m-card-items-per-row));
+      }
+
+      @media screen and (max-width: $xs-width-breakpoint) {
+        width: calc(100% / $s-card-items-per-row - ($info-gap * 0 / $s-card-items-per-row));
+      }
+    }
+
+    .temp-info__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1;
+
+      .temp-values__container {
+        display: flex;
+      }
+
+      /* span {
+        font-size: 2rem;
+      } */
+    }
+
+    .rain-info__container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+
+      .rain__display {
+        flex: 0.5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .rain__value {
+          font-size: 3rem;
+        }
+  
+        .rain__mms {
+          font-size: 3rem;
+        }
+      }      
+    }
+
+    .wind-info__container {
+    }
+
+    .sun-info__container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .sun-sub-info__container {
+        flex: 0 0 50%;
+
+        .sun-info__value {
+          display: flex;
+          flex-direction: column;
+
+          @media screen and (max-width: $xs-width-breakpoint) {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+    .pressure-info__container {
+
+    }
+
+    .humidity-info__container, .pressure-info__container {
+      display: inline-block;
+      margin: auto;
+
+      /* & span:first-child {
+        font-size: 4rem;
+      }
+      & span:nth-child(2) {
+        font-size: 2rem;
+      } */
     }
   }
 }
