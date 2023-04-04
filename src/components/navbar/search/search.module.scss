@@ -4,9 +4,13 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem 1rem;
+  width: 70%;
   //background: $tertiary-background-color;
-  //width: 100%;
   //height: $search-height;
+
+  @media screen and (max-width: $s-width-breakpoint) {
+    width: 100%;
+  }
 
   .search__wrapper {
     display: flex;
@@ -30,6 +34,7 @@
         background: $background-color;
         border-radius: 0 8px 8px 0;
         outline: none;
+        border: 1px solid $accent-primary;
       }
     }
   
@@ -37,7 +42,5 @@
       padding: 0.5rem;
       background: transparent;
     }
-  }
-
-  
+  }  
 }

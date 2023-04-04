@@ -39,11 +39,27 @@
 
       .temp-values__container {
         display: flex;
+        gap: 20px;
       }
+    }
 
-      /* span {
-        font-size: 2rem;
-      } */
+    .wind-info__container {
+      /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; */
+      display: inline-block;
+      margin: auto;
+
+      .wind-direction__container {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          
+          svg {
+            font-size: 1.5rem;
+          }
+      }
     }
 
     .rain-info__container {
@@ -67,9 +83,6 @@
           font-size: 3rem;
         }
       }      
-    }
-
-    .wind-info__container {
     }
 
     .sun-info__container {

@@ -14,7 +14,8 @@ import {
   WiBarometer,
   WiHumidity,
   WiSunrise,
-  WiSunset
+  WiSunset,
+  WiWindDeg
 } from 'react-icons/wi';
 
 import styles from './weatherDetails.module.scss';
@@ -24,6 +25,7 @@ const WeatherDetails = () => {
 
   const iconProps = {
     size: '2rem',
+    color: '#e7ff90'
   };
 
   const cardData = [
@@ -39,19 +41,12 @@ const WeatherDetails = () => {
                 &darr;
                 {Math.round(data.various.main.temp_min)}&deg;C
               </span>
-              
               <span className='display__value'>
                 &uarr;
                 {Math.round(data.various.main.temp_max)}&deg;C
               </span>
             </div>
           </div>
-          {/* <div>
-            <h4>Current maximum</h4>
-            <span className='display__value'>
-              {Math.round(data.various.main.temp_max)}&deg;C
-            </span>
-          </div> */}
           <div>
             <h4>Feels like</h4>
             <span className='display__value'>
@@ -66,8 +61,16 @@ const WeatherDetails = () => {
       icon: <WiStrongWind {...iconProps} />,
       markup: (
         <div className={styles['wind-info__container']}>
-          <p>Speed: {convertWindSpeed(data.various.wind.speed)} Km/h</p>
-          <p>Direction: {convertDegreesToDirection(data.various.wind.deg)}</p>
+          <p>
+            <span className='display__value-large'>
+              {convertWindSpeed(data.various.wind.speed)}
+            </span>
+            Km/h
+          </p>
+          <span className={`${styles['wind-direction__container']} display__value`}>
+            <WiWindDeg />
+            {convertDegreesToDirection(data.various.wind.deg)}
+          </span>
         </div>
       ),
     },
@@ -124,7 +127,9 @@ const WeatherDetails = () => {
       icon: <WiBarometer {...iconProps} />,
       markup: (
         <div className={styles['pressure-info__container']}>
-          <span className='display__value-large'>{data.various.main.pressure} </span>
+          <span className='display__value-large'>
+            {data.various.main.pressure}{' '}
+          </span>
           <span>hPa</span>
         </div>
       ),
@@ -134,7 +139,9 @@ const WeatherDetails = () => {
       icon: <WiHumidity {...iconProps} />,
       markup: (
         <div className={styles['humidity-info__container']}>
-          <span className='display__value-large'>{data.various.main.humidity}</span>
+          <span className='display__value-large'>
+            {data.various.main.humidity}
+          </span>
           <span>%</span>
         </div>
       ),

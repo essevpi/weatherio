@@ -17,6 +17,7 @@
     border: 1px solid $divider-color;
     background-color: $secondary-background-color;
     border-radius: 8px;
+    position: relative;
 
     &:first-child {
       align-self: flex-start;
@@ -24,7 +25,28 @@
 
     .info-box__text {
       flex: 1;
-      margin-left: 0.5rem;
+      //margin-left: 0.5rem;
+
+      .info-box__heading {
+        display: flex;
+    
+        svg {
+          background: $secondary-background-color;
+          border: 1px solid $divider-color;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translate(-50%, -50%);
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      .info-text__secondary {
+        color: $text-disabled-color;
+      }
     }
   }
 }

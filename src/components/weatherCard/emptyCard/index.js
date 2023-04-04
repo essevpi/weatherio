@@ -7,12 +7,21 @@ const EmptyCard = () => {
     <div className={styles['empty-card__container']}>
       <h2>Search a city to its current weather.</h2>
       <div className={styles['info-box__container']}>
-        <MdInfoOutline size={'2rem'}/>
         <div className={styles['info-box__text']}>
-          <p>For cities with the same name, search for the city name followed by a comma and its country code</p>
-          <br/>
-          <p>Example:</p>
-          <p>Rome, IT or Rome, US</p>
+          <div className ={styles['info-box__heading']}>
+            <MdInfoOutline size={'2rem'} />
+            <p>
+              For cities with the same name, search for the city name followed by
+              a comma and its country code
+            </p>
+          </div>
+          <br />
+          <p className={styles['info-text__secondary']}>
+            <i>Example:</i>
+          </p>
+          <p className={styles['info-text__secondary']}>
+            <i>Rome, IT or Rome, US</i>
+          </p>
         </div>
       </div>
     </div>

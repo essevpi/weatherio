@@ -59,7 +59,7 @@ const MainInfo = () => {
           </h1>
         </div>
         <div className={styles['sub-info__container']}>
-        {iconGenerator(data.weather.id)}
+          {iconGenerator(data.weather.id)}
           <div className={styles['temp__container']}>
             
             <h1>{Math.round(data.various.main.temp)}&deg;C</h1>
