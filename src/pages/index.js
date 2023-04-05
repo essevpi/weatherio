@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import { useDispatch, useSelector } from 'react-redux';
-import Search from '@/components/navbar/search';
 import WeatherCard from '@/components/weatherCard';
 import styles from '../styles/Home.module.scss';
 
