@@ -86,11 +86,12 @@ const WeatherDetails = () => {
           <h4>Rain volume in the last hour:</h4>
           {data.various.rain ? (
             <div>
-              
-              <p>{data.various.rain['1h']} mm</p>
+              <span className='display__value'>
+                {data.various.rain['1h']} mm
+              </span>
             </div>
           ) : (
-            <p>0mm</p>
+            <span className='display__value'>0mm</span>
           )}
         </div>
       ),
