@@ -15,7 +15,7 @@ const Search = () => {
 
   const handleFormSubmit = (city) => (e) => {
     e.preventDefault();
-    e.target.blur();
+    e.target[0].blur();
     dispatch(fetchWeatherByCity(city));
     dispatch(savePreviousInput(city));
     dispatch(changeInput(''));    
