@@ -29,10 +29,8 @@ input {
   color: $text-primary-color;
 
   /* Fix for Safari zoom on input */
-  @media screen and (-webkit-min-device-pixel-ratio:0) {
-    input {
+  @media screen and (max-width: $xs-width-breakpoint) {
       font-size: 16px;
-    }
   }
 }
 
