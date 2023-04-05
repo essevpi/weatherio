@@ -3,10 +3,15 @@
 .empty-card__container {
   text-align: center;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  width: 75%;
+
+  @media screen and (max-width: $xs-width-breakpoint) {
+    flex: none;
+    width: 80%;
+  }
 
   .error__container {
     height: 100px;
@@ -30,9 +35,7 @@
     background-color: $secondary-background-color;
     border-radius: 8px;
     position: relative;
-
     
-
     .info-box__text {
       flex: 1;
 

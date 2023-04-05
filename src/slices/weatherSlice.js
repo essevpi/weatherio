@@ -26,9 +26,6 @@ export const fetchWeatherByCity = createAsyncThunk(
         cod: response.cod,
       };
 
-      console.log('filtered', filteredResult);
-      console.log('res', response);
-
       return filteredResult;
     } catch (error) {
       throw error;
@@ -50,16 +47,16 @@ const weatherSlice = createSlice({
     builder.addCase(fetchWeatherByCity.pending, (state) => {
       state.loading = true;
     }),
-      builder.addCase(fetchWeatherByCity.fulfilled, (state, action) => {
-        state.loading = false;
-        state.data = action.payload;
-        state.error = 'No error';
-      }),
-      builder.addCase(fetchWeatherByCity.rejected, (state, action) => {
-        state.loading = false;
-        state.data = action.payload;
-        state.error = 'Error';
-      });
+    builder.addCase(fetchWeatherByCity.fulfilled, (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+      state.error = 'No error';
+    }),
+    builder.addCase(fetchWeatherByCity.rejected, (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+      state.error = 'Error';
+    });
   },
 });
 

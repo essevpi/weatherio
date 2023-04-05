@@ -17,6 +17,10 @@ const EmptyCard = () => {
         exit={{ opacity: 0 }}
         className={styles['empty-card__container']}
       >
+        <div className={styles['error__container']}>
+          &nbsp;
+          {data && data.cod == 404 && <ErrorMessage city={previousInput} />}
+        </div>
         <h2>Search a city to see its current weather.</h2>
         <div className={styles['info-box__container']}>
           <div className={styles['info-box__text']}>
@@ -35,10 +39,6 @@ const EmptyCard = () => {
               <i>Rome, IT or Rome, US</i>
             </p>
           </div>
-        </div>
-        <div className={styles['error__container']}>
-          &nbsp;
-          {data && data.cod == 404 && <ErrorMessage city={previousInput} />}
         </div>
       </motion.div>
     </AnimatePresence>
