@@ -28,7 +28,6 @@ const Search = () => {
       <div className={styles['search__wrapper']}>
         <input
           className={styles['search__field']}
-          type='search'
           placeholder='Search city'
           value={input}
           onChange={handleSearchChange}
