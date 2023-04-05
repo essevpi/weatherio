@@ -22,7 +22,7 @@
     @media screen and (max-width: $m-width-breakpoint) {
       width: 50%;
     }
-  
+
     .progress-bar__progress {
       background-color: $accent-primary;
       border-radius: 9999px;
@@ -34,15 +34,15 @@
       animation-iteration-count: infinite;
       animation-name: indeterminate-progress-bar;
     }
-  
+
     @keyframes indeterminate-progress-bar {
-        from {
-            left: -50%;
-        }
-        to {
-            left: 100%;
-        }
+      from {
+        left: -50%;
+      }
+
+      to {
+        left: 100%;
+      }
     }
   }
 }
-

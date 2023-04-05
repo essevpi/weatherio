@@ -1,0 +1,12 @@
+@import '../../../../styles/variables.scss';
+
+.error-message__container {
+  background: $secondary-background-color;
+  color: $error-message-color-light;
+  border-radius: 8px;
+  border: 1px solid $error-message-color-light;
+  padding: 1rem;
+  position: relative;
+  top: 0;
+  left: 0;
+}

@@ -1,16 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import WeatherDetails from './weatherDetails';
 import EmptyCard from './emptyCard';
 import Loader from './loader';
 
 import styles from './weatherCard.module.scss';
-import MobileView from './mobileView';
-import useCheckIfMobile from '@/hooks/useCheckIfMobile';
 
 const WeatherCard = () => {
-  const isMobile = useCheckIfMobile();
-  const dispatch = useDispatch();
   const { data, loading } = useSelector(state => state.weather);
   
   return (
@@ -19,9 +14,7 @@ const WeatherCard = () => {
         data && data.cod == 200
         ? loading
           ? <Loader />
-          : isMobile 
-            ? <MobileView /> 
-            : <WeatherDetails />
+          : <WeatherDetails />
         : <EmptyCard />
       }
     </div>

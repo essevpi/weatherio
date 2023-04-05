@@ -1,0 +1,21 @@
+@import '../../../../styles/variables.scss';
+
+.card__container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: $secondary-background-color;
+
+  @media screen and (max-width: $xs-width-breakpoint) {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .card__title {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+}

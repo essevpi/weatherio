@@ -42,10 +42,6 @@
       flex: 1;
     }
 
-    .navbar__empty-placeholder, .navbar__logo-container {
-      //flex: 1;
-    }
-
     .navbar__empty-placeholder {
       @media screen and (max-width: $s-width-breakpoint) {
         display: none;

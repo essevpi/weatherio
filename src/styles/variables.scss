@@ -1,6 +1,6 @@
 /* Layout values */
 $header-height: 5rem;
-$footer-height: 4rem;
+$footer-height: 5rem;
 $search-height: 4rem;
 $info-gap: 0.5rem;
 $l-card-items-per-row: 3;
@@ -22,6 +22,8 @@ $text-primary-color: #fff;
 $text-secondary-color: #ffffffbb;
 $text-disabled-color: #ffffff80;
 $divider-color: #ffffff1f;
+$error-message-color-light: #e57373;
+$error-message-color-dark: #f44336;
 
 /* Responsive breakpoints */
 $xxs-width-breakpoint: 320px;
@@ -43,7 +45,7 @@ $display-font-size-s: 1.35rem;
 $display-font-size-m: 1.5rem;
 $display-font-size-l: 1.75rem;
 
-$large-display-font-size-xs: 2.75rem;
+$large-display-font-size-xs: 2.5rem;
 $large-display-font-size-s: 3rem;
 $large-display-font-size-m: 3.5rem;
 $large-display-font-size-l: 4rem;

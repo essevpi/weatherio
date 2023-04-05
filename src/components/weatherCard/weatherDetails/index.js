@@ -1,12 +1,13 @@
 import { useSelector } from 'react-redux';
 import MainInfo from './mainInfo';
-import Card from './card';
+import CardList from './cardList';
+import useCheckIfMobile from '@/hooks/useCheckIfMobile';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   convertWindSpeed,
   convertDegreesToDirection,
   getLocaleTime,
 } from '@/utils/helperFunctions';
-
 import {
   WiStrongWind,
   WiUmbrella,
@@ -15,20 +16,21 @@ import {
   WiHumidity,
   WiSunrise,
   WiSunset,
-  WiWindDeg
+  WiWindDeg,
 } from 'react-icons/wi';
 
 import styles from './weatherDetails.module.scss';
 
 const WeatherDetails = () => {
+  const isMobile = useCheckIfMobile();
   const { data } = useSelector((state) => state.weather);
 
   const iconProps = {
     size: '2rem',
-    color: '#e7ff90'
+    color: '#e7ff90',
   };
 
-  const cardData = [
+  const cardsData = [
     {
       title: 'Temps',
       icon: <WiThermometer {...iconProps} />,
@@ -67,7 +69,9 @@ const WeatherDetails = () => {
             </span>
             Km/h
           </p>
-          <span className={`${styles['wind-direction__container']} display__value`}>
+          <span
+            className={`${styles['wind-direction__container']} display__value`}
+          >
             <WiWindDeg />
             {convertDegreesToDirection(data.various.wind.deg)}
           </span>
@@ -79,13 +83,14 @@ const WeatherDetails = () => {
       icon: <WiUmbrella {...iconProps} />,
       markup: (
         <div className={styles['rain-info__container']}>
+          <h4>Rain volume in the last hour:</h4>
           {data.various.rain ? (
             <div>
-              <h3>Rain volume in the last hour:</h3>
+              
               <p>{data.various.rain['1h']} mm</p>
             </div>
           ) : (
-            <p>No rain volume in the last hours.</p>
+            <p>0mm</p>
           )}
         </div>
       ),
@@ -96,7 +101,7 @@ const WeatherDetails = () => {
       markup: (
         <div className={styles['sun-info__container']}>
           <div className={styles['sun-sub-info__container']}>
-            <div className={'card__title'}>
+            <div className={styles['sun-card__title']}>
               <WiSunrise {...iconProps} />
               <h2>Sunrise</h2>
             </div>
@@ -108,7 +113,7 @@ const WeatherDetails = () => {
             </div>
           </div>
           <div className={styles['sun-sub-info__container']}>
-            <div className={'card__title'}>
+            <div className={styles['sun-card__title']}>
               <WiSunset {...iconProps} />
               <h2>Sunset</h2>
             </div>
@@ -128,7 +133,7 @@ const WeatherDetails = () => {
       markup: (
         <div className={styles['pressure-info__container']}>
           <span className='display__value-large'>
-            {data.various.main.pressure}{' '}
+            {data.various.main.pressure}
           </span>
           <span>hPa</span>
         </div>
@@ -149,18 +154,29 @@ const WeatherDetails = () => {
   ];
 
   return (
-    <div className={styles['weather-details__container']}>
-      <div className={styles['main-info__container']}>
-        <MainInfo />
-      </div>
-      <div className={styles['sub-info__container']}>
-        {cardData.map((el, i) => (
-          <Card icon={el.icon} title={el.title} key={i}>
-            {el.markup}
-          </Card>
-        ))}
-      </div>
-    </div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className={styles['weather-details__container']}
+      >
+        <div className={styles['main-info__container']}>
+          <MainInfo />
+        </div>
+        {isMobile ? (
+          <CardList
+            style={styles['sub-info__container-mobile']}
+            cardsData={cardsData}
+          />
+        ) : (
+          <CardList
+            style={styles['sub-info__container-desktop']}
+            cardsData={cardsData}
+          />
+        )}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

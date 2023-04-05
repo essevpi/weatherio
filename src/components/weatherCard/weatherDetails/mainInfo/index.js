@@ -61,7 +61,6 @@ const MainInfo = () => {
         <div className={styles['sub-info__container']}>
           {iconGenerator(data.weather.id)}
           <div className={styles['temp__container']}>
-            
             <h1>{Math.round(data.various.main.temp)}&deg;C</h1>
             <h3>
               {data.weather.description.charAt(0).toUpperCase() +

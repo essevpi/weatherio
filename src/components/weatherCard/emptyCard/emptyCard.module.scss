@@ -8,6 +8,18 @@
   gap: 3rem;
   width: 75%;
 
+  .error__container {
+    height: 100px;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+
   .info-box__container {
     text-align: start;
     color: $text-secondary-color;
@@ -19,13 +31,10 @@
     border-radius: 8px;
     position: relative;
 
-    &:first-child {
-      align-self: flex-start;
-    }
+    
 
     .info-box__text {
       flex: 1;
-      //margin-left: 0.5rem;
 
       .info-box__heading {
         display: flex;

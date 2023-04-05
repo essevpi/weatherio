@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { changeInput } from '@/slices/searchSlice';
+import { changeInput, savePreviousInput } from '@/slices/searchSlice';
 import { fetchWeatherByCity } from '@/slices/weatherSlice';
 import { AiOutlineSearch } from 'react-icons/ai';
 
@@ -16,11 +16,15 @@ const Search = () => {
   const handleFormSubmit = (city) => (e) => {
     e.preventDefault();
     dispatch(fetchWeatherByCity(city));
-    dispatch(changeInput(''));
+    dispatch(savePreviousInput(city));
+    dispatch(changeInput(''));    
   };
 
   return (
-    <form className={styles['search__container']} onSubmit={handleFormSubmit(input)}>
+    <form
+      className={styles['search__container']}
+      onSubmit={handleFormSubmit(input)}
+    >
       <div className={styles['search__wrapper']}>
         <input
           className={styles['search__field']}
@@ -29,14 +33,10 @@ const Search = () => {
           value={input}
           onChange={handleSearchChange}
         />
-        <span
-          className={styles['search__icon']}
-          /* type='submit' */
-        >
-          <AiOutlineSearch style={{display: 'flex'}} size={'24px'}/>
+        <span className={styles['search__icon']}>
+          <AiOutlineSearch style={{ display: 'flex' }} size={'24px'} />
         </span>
       </div>
-      {/* {data && data.cod == 404 && <div>City not found!</div>} */}
     </form>
   );
 };

@@ -34,19 +34,20 @@ input[type='search']::-webkit-search-cancel-button {
   filter: brightness(0) invert(1);
 }
 
-button, button:focus {
+button,
+button:focus {
   border: none;
   outline: none;
 }
 
 h1 {
   font-size: clamp($h1-min-size, $h1-val-size, $h1-max-size);
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 h2 {
   font-size: clamp($h2-min-size, $h2-val-size, $h2-max-size);
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 h3 {
@@ -74,6 +75,7 @@ button {
 
 .display__value {
   font-size: $display-font-size-l;
+  line-height: 1.2;
 
   @media screen and (max-width: $l-width-breakpoint) {
     font-size: $display-font-size-m;
@@ -102,7 +104,12 @@ button {
   @media screen and (max-width: $s-width-breakpoint) {
     font-size: $large-display-font-size-xs;
   }
+
+  @media screen and (max-width: $xs-width-breakpoint) {
+    font-size: $large-display-font-size-xs * 0.7;
+  }
 }
+
 .main-content__container {
   width: $xl-width-content;
 
@@ -127,7 +134,7 @@ button {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border-radius: 8px;  
+  border-radius: 8px;
   background-color: $secondary-background-color;
 
   .card__title {

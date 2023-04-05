@@ -6,7 +6,7 @@ const Loader = () => {
       <h3>Loading results...</h3>
       <div className={styles['progress-bar__container']}>
         <div className={styles['progress-bar__progress']}></div>
-      </div>      
+      </div>
     </div>
   );
 };
