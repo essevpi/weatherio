@@ -11,6 +11,7 @@ const Home = () => {
       <Head>
         <title>Weatherio</title>
         <meta name="description" content="Weather app" />
+        <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>      
